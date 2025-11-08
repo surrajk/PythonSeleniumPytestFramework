@@ -2,6 +2,8 @@ import time
 
 from selenium.webdriver.common.by import By
 
+from pageObjects.checkout_confirmation import Checkout_Confirmation
+
 
 class ShopPage:
     def __init__(self,driver):
@@ -25,6 +27,8 @@ class ShopPage:
 
     def goToCart(self):
         self.driver.find_element(*self.cart_link).click()
+        checkoutConfirmation = Checkout_Confirmation(self.driver)
+        return checkoutConfirmation
 
 
 
