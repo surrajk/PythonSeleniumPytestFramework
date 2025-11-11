@@ -10,9 +10,9 @@ class LoginPage:
         self.password_input = (By.ID, "password")
 
 
-    def login(self):
-        self.driver.find_element(*self.username_input).send_keys("rahulshettyacademy")
-        self.driver.find_element(*self.password_input).send_keys("learning")
+    def login(self,username,password):
+        self.driver.find_element(*self.username_input).send_keys(username)
+        self.driver.find_element(*self.password_input).send_keys(password)
         self.driver.find_element(By.ID, "signInBtn").click()
         shop_page = ShopPage(self.driver)
         return shop_page
